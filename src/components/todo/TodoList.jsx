@@ -1,11 +1,20 @@
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ headTitle, todos, onDeleteTodoItem, onToggleTodoItem }) => {
+  console.log(todos);
   return (
     <section>
       <h2>{headTitle}</h2>
       <ul>
         {
+          todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onDeleteTodoItem={onDeleteTodoItem}
+              onToggleTodoItem={onToggleTodoItem}
+            />
+          ))
           // SECTION: 1번 문제
           // TODO: 투두 리스트 렌더링
           // NOTE: map 메서드를 사용하여 `TodoItem` 컴포넌트 렌더링
